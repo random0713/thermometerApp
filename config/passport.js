@@ -5,19 +5,6 @@ var LocalStrategy = require('passport-local').Strategy;
 var User =  require('../models/user');
 var passport = require('passport');
 
-//checks if a username is already taken
-passport.use('local-get', new LocalStrategy(
-    function(username, password, done) {
-			User.getUserByUserName(username, function(error, user) {
-				if (error) 
-					return done(error);
-				if (!user) {
-					return done(null, false, {message: 'Unbekannter Benutzer'} );
-				} 
-					
-				
-			});
-		}));
 
 //LocalStrategy: checks the username and password given by the client and ensures that it exists in the databse or not
 passport.use( new LocalStrategy(
