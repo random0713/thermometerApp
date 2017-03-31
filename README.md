@@ -11,7 +11,7 @@ in order to let them have the priviledge too to change the temperature of the ro
 
 - sign-up page
 - login system
-- admin and user panel (with different priviledges)
+- admin and user panel (with different priviledges). (after registration, users are directly given the role 'authenticated'. To create your first admin, just go in the mongo after registering and update 'roles' to 'admin'. After it, you will be able to set admins via the client-side).
 - weather forecast
 
 ## Prerequisities
