@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+
+	<html>
+		<head>
+			<link rel="icon" type="image/png" href="/images/logo.png">
+			<title>Thermometer App</title>
+			<!-- Bootstrap core CSS     -->
+			<link href="/css/bootstrap.min.css" rel="stylesheet" />
+			<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+			<!-- Light Bootstrap core CSS-->
+			<link href="/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+			<!--own Style css -->
+			<link rel="stylesheet" type="text/css" href="/css/style.css"/>		
+			<!--thermometer design-->
+			<link rel="stylesheet" href="/css/circleprogression.css"> 
+			<!--block of current weather-->
+			<!--sidebar slide-->
+			<link rel="stylesheet" href="/css/sidebar.css">
+			<!--newCity design-->
+			<link rel="stylesheet" href="/css/newCity.css">
+			<!--Fonts and icons-->
+			<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		</head>
+		
+		<body>
+		 <div class="site-wrapper">
+			{{#if user}}
+			<div class="sidebar animate fadeInLeft one" data-color="azure" data-image="/images/sidebar-3.jpg">
+				<div class="sidebar-wrapper ">
+					
+					<div class="logo">
+						<a href="#" class="simple-text">
+							{{user.roles}}
+						</a>
+					</div>
+					
+					<ul class="nav">
+						<li class="active">
+							<a href="/">
+								<i class="fa fa-tachometer" aria-hidden="true"></i>
+								<p>Dashboard</p>
+							</a>
+						</li>
+					</ul>
+					{{#compare user.roles 'admin'}}
+					<ul class="nav">
+						<li class="active">
+							<a href="/users/profile">
+								<i class="fa fa-address-book-o" aria-hidden="true"></i>
+
+								<p>Benutzerliste</p>
+							</a>
+						</li>
+					</ul>
+					{{/compare}}
+				</div>
+			</div>
+			
+			{{/if}}
+			
+			 <div class="container">
+				<div class="header clearfix">
+					<nav>
+						<ul class="nav nav-pills pull-right">
+            
+						{{#if user}}
+							<li role="presentation" >
+								<a id="aLink" href="/">
+									<i class="fa fa-thermometer-full" aria-hidden="true"></i>
+									Dashboard
+								</a>
+							</li>
+							<li role="presentation">
+								<a id="aLink" href="/users/logout">Abmelden</a>
+							</li>
+			
+			
+						{{else}}
+							<li role="presentation">
+								<a id="aLink" href="/users/login">
+									<i class="fa fa-user-circle" aria-hidden="true"></i>
+									Anmelden
+								</a>
+						    </li>
+							<li role="presentation">
+								<a id="aLink" href="/users/register">Registrieren</a>
+							</li>
+			
+						{{/if}}
+						</ul>
+					</nav>
+					
+					{{#if user}}
+						{{#compare user.roles "admin"}}
+							<h3 class="text-muted">Hallo Admin {{user.username}}</h3>
+						{{/compare}}
+						{{#compare user.roles "authenticated"}}
+							<h3 class="text-muted">Hallo {{user.username}}</h3>
+						{{/compare}}
+					{{else}}
+						<h3 class= "text-muted">Temperatur App</h3>
+					{{/if}}
+				</div>
+
+      <div class="row">
+		<div class="col-lg-12">
+			{{#if success_msg}}
+				<div class="alert alert-success">{{success_msg}}</div>
+			{{/if}}
+			
+			{{#if error_msg}}
+				<div class="alert alert-danger">{{error_msg}}</div>
+			{{/if}}
+			
+			{{#if error}}
+				<div class="alert alert-danger">{{error}}</div>
+			{{/if}}
+			
+			{{{body}}}
+		</div>
+      </div>
+
+	 
+      <footer class="footer">
+        <p>&copy; 2017 random0713, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+</div> <!-- /site-wrapper -->	
+</body>
+		
+</html>
+	
+	

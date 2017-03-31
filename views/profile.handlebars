@@ -1,0 +1,42 @@
+﻿<form action="/users/profile" method="post">
+		<label>Neue Adminrolle zuweisen</label>
+		<input type="text" placeholder="Username eines Benutzers" name="username">
+	<button type="submit" class="button"><span>Hinzuf&uuml;gen</span></button>
+</form>
+
+<div class="card">
+     <div class="header">
+         <h4 class="title">Benutzerliste</h4>
+         <p class="category">Benutzerliste mit zugehörigen Rollen</p>
+     </div>
+     <div class="content table-responsive table-full-width">
+           <table class="table table-hover table-striped">
+                 <thead>
+						<th>Name</th>
+                        <th>Vorname</th>
+                        <th>Benutzername</th>
+                         <th>Role</th>
+                 </thead>
+                 <tbody>
+					{{#each users}}
+                     <tr>
+                         <td>{{name}}</td>
+                         <td>{{firstname}}</td>
+                         <td>{{username}}</td>
+						 {{#compare roles "admin"}}
+							<td class="administrator"><p>Administrator</p></td>
+						 {{/compare}}
+						 {{#compare roles "authenticated"}}
+							<td>User</td>
+						 {{/compare}}
+					 </tr>
+					 {{/each}}
+                                        
+                  </tbody>
+            </table>
+
+       </div>
+</div>
+                
+
+
