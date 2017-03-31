@@ -19,9 +19,7 @@ passport.use('local-get', new LocalStrategy(
 			});
 		}));
 
-//LocalStrategy: Benutzername empfangen, und 'match' mit dem vom User 
-//gegebenen Benutzername
-//dasgleich mit Passwort
+//LocalStrategy: checks the username and password given by the client and ensures that it exists in the databse or not
 passport.use( new LocalStrategy(
 	function(username, password, done) {
 		User.getUserByUserName(username, function(error, user) {
