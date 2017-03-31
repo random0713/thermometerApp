@@ -23,7 +23,7 @@ var users = require('./routes/users');
 //init app
 var app = express();
 
-//handlebars helper used for the templates
+//handlebars helpers used for the templates
 var handlebars = require('handlebars');
 
 //checks if user.roles = "admin" or user.roles = "authenticated"
