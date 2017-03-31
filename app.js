@@ -6,8 +6,6 @@ var exphbs = require('express-handlebars');
 var expressValidator = require('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
-var less = require('less');
-var lessMiddleware = require('less-middleware');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
