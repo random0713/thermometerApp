@@ -36,7 +36,6 @@ handlebars.registerHelper('compare', function(lvalue, rvalue, options) {
 			else
 				return options.inverse(this);
 			});
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 
 //gives the list of all users (for admin)
 handlebars.registerHelper('each', function(context, options) {
@@ -48,6 +47,9 @@ handlebars.registerHelper('each', function(context, options) {
 	
 	return ret;
 });
+
+
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 
 
 //view engines .handlebars as default layout
