@@ -1,0 +1,77 @@
+#searchIcon {
+	width: 50%;
+    border-radius: 50%;
+    margin: 0 25% 0 25%;
+}
+
+#aTemp {
+            display: inline-block;
+            width: 100%;
+            padding: 22px 0;
+            margin: 0;
+            border-top: 1px solid #D5DDE4;
+        }
+		
+.aTemp {
+            list-style-type: none;
+            padding: 0;
+            margin: 40px 0 0;
+			
+        }
+		
+span {
+            color: #2C3238;
+        }
+img {
+     width: 30%;
+    }
+
+.temperature {
+	background: #ECEEEF;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 462px;
+    border-radius: 5px;
+    font: 18px normal 'Varela Round', Helvetica, serif;
+    color: #777B7E;
+	box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+
+.aSearch {
+	background: #ECEEEF;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 462px;
+    border-radius: 5px;
+    font: 18px normal 'Varela Round', Helvetica, serif;
+    color: #777B7E;
+	box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
+
+/*=== FadeIn (for temp part to appear) ===*/
+/*=== FADE IN  ===*/
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+#cityname {
+	margin: 20px 0 0;
+}
